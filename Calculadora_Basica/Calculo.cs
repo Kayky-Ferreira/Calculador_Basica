@@ -32,6 +32,7 @@ namespace Calculadora_Basica
                     resultado = (valor1 / 100) * valor2;
                     break;
             }
+
          return resultado;
         }
    

@@ -21,7 +21,7 @@ namespace Calculadora_Basica
         public Form1()
         {
             InitializeComponent();
-            
+
             //metodo
             rd1Som.CheckedChanged += rd1Som_CheckedChanged;
             rd2Sub.CheckedChanged += rd1Som_CheckedChanged;
@@ -35,10 +35,34 @@ namespace Calculadora_Basica
         private void btnExecutar_Click_1(object sender, EventArgs e)
         {
 
-            
+            //Avisos de erro ao Usuário
+            if (txtValor1.Text == "Digite o primeiro valor")
+            {
+                MessageBox.Show("Preencha o primeiro campo");
+                return;
+            }
+            else if (txtValor1.Text == "")
+            {
+                MessageBox.Show("Não deixe o primeiro campo vazio");
+                return;
+            }
+            else if (txtValor2.Text == "Digite o segundo valor")
+            {
+                MessageBox.Show("Preencha o segundo campo");
+                return;
+            }
+             else if (txtValor2.Text == "")
+            {
+                MessageBox.Show("Não deixe o segundo campo vazio");
+                return;
+            }
+
+
 
             float valor1 = float.Parse(txtValor1.Text);
             float valor2 = float.Parse(txtValor2.Text);
+
+          
 
             
         //Para puchar o operador
@@ -62,7 +86,7 @@ namespace Calculadora_Basica
             {
                 tipo_operacao=5;
             }
-
+            
             MessageBox.Show("o resultado é: " + CA.calculo_operacao(valor1, valor2, tipo_operacao));
         }
              
